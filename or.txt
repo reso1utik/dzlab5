@@ -1,0 +1,45 @@
+//#define _CRT_SECURE_NO_WARNINGS 
+//#include <stdio.h>
+//#include <math.h>   
+//#include <locale.h>
+//
+//int main() {
+//    setlocale(LC_ALL, "rus");
+//
+//    double x;
+//    double y, z;
+//    printf("Значения x, y, z");
+//    scanf("%lf %lf %lf", &x, &y, &z);
+//
+//    double rezult;
+//    double q = sqrt(x, 3);
+//    double r = 10 * (q + pow(x, y + 2));
+//    double rt = pow(asin((z)-fabs(x - y)), 2);
+//    double l = r * rt;
+//    rezult = sqrt(10 * (sqrt(x, 3) + pow(x, y + 2))) * pow(asin((z)-fabs(x - y)), 2);
+//    printf("(%lf , %lf, %lf) = %fl", x, y, z, l);
+//
+//    getchar();
+//}
+#define _CRT_SECURE_NO_WARNINGS 
+#include <stdio.h> 
+#include <math.h> 
+#include <locale.h> 
+
+int main() {
+    setlocale(LC_CTYPE, "Russian");
+
+    double x, y, z;
+    printf("Значения x, y, z: ");
+    scanf("%lf %lf %lf", &x, &y, &z);
+
+    // Чистая математика без лишних переменных
+    //double rezult = sqrt(10 * (cbrt(x) + pow(x, y + 2))) * (pow(asin(z - fabs(x - y)),2));
+    double rezult = sqrt(10 * (cbrt(x) + pow(x, y + 2))) * (pow(asin(z), 2) - fabs(x - y));
+
+    printf("(%lf, %lf, %lf) = %lf\n", x, y, z, rezult);
+
+    getchar();
+    getchar(); // Второй getchar, чтобы окно не закрывалось после ввода чисел в scanf
+    return 0;
+}
